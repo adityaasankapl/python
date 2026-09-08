@@ -36,4 +36,56 @@ while True:
         if product2 in product:
             product.index(product2)
             index =  product.index(product2)
-            
+            new_price = input("enter new price :")
+            price[index] = new_price
+            print("price updated successfull !!")
+
+        else:
+            print("price not found !!")
+
+    elif choice == 4:
+        product3 = input("Enter the product to delete :")
+
+        if product3 in product:
+            product.index(product3)
+            index = product.index(product3)
+            product.pop(index)
+            price.pop(index)
+            print("product deleted Successfully !!!") 
+
+        else:
+            print("product not found !!!")        
+
+    elif choice == 5:    
+        product4 = input("Enter the product to search :")
+
+        if product4 in product:
+            product.index(product4)
+            index = product.index(product4)
+            print("Search product !!")
+            print("product\tprice")
+            print(product[index],"\t",price[index])
+
+        else:
+            print("product not found !!!")
+
+    elif choice == 6:
+        for i in range(len(product)):
+            for j in range(i+1 , len(product)):
+
+                if price[i]>price[j]:
+                    price[i],price[j] = price[j],price[i]
+                    product[i],product[j] = product[j],product[i]
+                    print("sorted successfuly !!!")
+                print(product)
+                print(price)
+
+    elif choice == 7:
+        print("Thank you for buying Product !!!")
+        break
+
+    else:
+        print("Invalid choice !!!")
+        
+
+   
